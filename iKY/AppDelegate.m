@@ -94,7 +94,7 @@
     mikeNotification.informativeText = [NSString stringWithFormat:@"Microphone status: %@ (toggle with ⌘⌃M)" , micEnabled ? @"enabled" : @"disabled"];
     
     mikeNotification.soundName = micEnabled ? MIKE_ON : MIKE_OFF;
-    //TODO: use .contentImage for better/easier to understand UX
+    mikeNotification.contentImage = [NSImage imageNamed:micEnabled ? MIKE_ON : MIKE_OFF];
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:mikeNotification];
 }

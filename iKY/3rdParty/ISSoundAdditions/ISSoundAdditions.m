@@ -350,7 +350,7 @@ AudioDeviceID obtainDefaultInputDevice()
     theAddress.mSelector = kAudioDevicePropertyMute;
 
     propSize = sizeof(uint32);
-    theError = AudioHardwareServiceGetPropertyData(defaultDevID, &theAddress, 0, nil, &propSize, &isMuted);
+    theError = AudioHardwareServiceGetPropertyData(defaultDevID, &theAddress, 0, @"", &propSize, &isMuted);
     if (theError != noErr) NSLog(@"Cannot get mute status of device 0x%0x", defaultDevID);
 
     return isMuted;

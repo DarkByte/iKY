@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		070D36001AB98096007250D5 /* mike_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 070D35FE1AB98096007250D5 /* mike_off.png */; };
-		070D36021AB98096007250D5 /* mike_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 070D35FF1AB98096007250D5 /* mike_on.png */; };
 		076060951C9DB43800FBC934 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076060941C9DB43800FBC934 /* Carbon.framework */; };
 		076060A81C9DB74C00FBC934 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076060A71C9DB74C00FBC934 /* AppKit.framework */; };
 		076060C11C9DB77C00FBC934 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */; };
@@ -29,8 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		070D35FE1AB98096007250D5 /* mike_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mike_off.png; sourceTree = "<group>"; };
-		070D35FF1AB98096007250D5 /* mike_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mike_on.png; sourceTree = "<group>"; };
 		076060941C9DB43800FBC934 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		076060A71C9DB74C00FBC934 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		076060AF1C9DB77C00FBC934 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
@@ -39,7 +35,7 @@
 		076060B21C9DB77C00FBC934 /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyTextField.m; sourceTree = "<group>"; };
 		076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
 		076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
-		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iKY.xcassets; sourceTree = "<group>"; };
+		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iKY.xcassets; path = Images/iKY.xcassets; sourceTree = "<group>"; };
 		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
 		079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSoundAdditions.m; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.m; sourceTree = SOURCE_ROOT; };
 		079ECAC81C9EF2E300EBAABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = iKY/3rdParty/ISSoundAdditions/README.md; sourceTree = SOURCE_ROOT; };
@@ -77,16 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		070D35F71AB87576007250D5 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				070D35FE1AB98096007250D5 /* mike_off.png */,
-				070D35FF1AB98096007250D5 /* mike_on.png */,
-				0763B2201C9DC8D90033628E /* iKY.xcassets */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		076060961C9DB44400FBC934 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,21 +144,19 @@
 		07BA02731AB8331C00ADC1FB /* iKY */ = {
 			isa = PBXGroup;
 			children = (
-				07BA02761AB8331C00ADC1FB /* AppDelegate.h */,
-				07BA02771AB8331C00ADC1FB /* AppDelegate.m */,
-				07BA027D1AB8331C00ADC1FB /* MainMenu.xib */,
+				07BE77161CA74472009D73AE /* Main window */,
 				07BE76D11CA56283009D73AE /* Preferences */,
 				07BE77141CA7292F009D73AE /* iKYUtils */,
 				07BE77151CA72945009D73AE /* Resources */,
 				07BA02741AB8331C00ADC1FB /* Supporting Files */,
 			);
-			name = iKY;
 			path = iKY;
 			sourceTree = "<group>";
 		};
 		07BA02741AB8331C00ADC1FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0763B2201C9DC8D90033628E /* iKY.xcassets */,
 				07BA02751AB8331C00ADC1FB /* Info.plist */,
 				07BA02791AB8331C00ADC1FB /* main.m */,
 			);
@@ -223,11 +207,20 @@
 		07BE77151CA72945009D73AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				070D35F71AB87576007250D5 /* Images */,
 				079ECAD51CA1476E00EBAABA /* Sounds */,
 				0760609D1C9DB6D200FBC934 /* 3rdParty */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		07BE77161CA74472009D73AE /* Main window */ = {
+			isa = PBXGroup;
+			children = (
+				07BA02761AB8331C00ADC1FB /* AppDelegate.h */,
+				07BA02771AB8331C00ADC1FB /* AppDelegate.m */,
+				07BA027D1AB8331C00ADC1FB /* MainMenu.xib */,
+			);
+			name = "Main window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +284,7 @@
 				07F59B311CA42789007FA9B0 /* iKYPreferencesController.xib in Resources */,
 				07C7FCEB1C9DBAAB00236E22 /* MainMenu.xib in Resources */,
 				07E044D71CA14DD60043ECA2 /* mike_off.aiff in Resources */,
-				070D36021AB98096007250D5 /* mike_on.png in Resources */,
 				0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */,
-				070D36001AB98096007250D5 /* mike_off.png in Resources */,
 				07E044D81CA14DD60043ECA2 /* mike_on.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
