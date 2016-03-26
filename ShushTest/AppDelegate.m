@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <Carbon/Carbon.h>
 #import "ISSoundAdditions.h"
-#import "MASHotKey.h"
 #import "DDHotKeyCenter.h"
 #import "iKYPreferencesController.h"
 

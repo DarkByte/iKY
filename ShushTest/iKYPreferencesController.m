@@ -10,7 +10,6 @@
 #import "AppDelegate.h"
 #import "MASShortcut.h"
 #import "MASShortcutView.h"
-#import "MASShortcutView+UserDefaults.h"
 
 #define SharedAppDelegate ((AppDelegate *)[[NSApplication sharedApplication] delegate])
 
