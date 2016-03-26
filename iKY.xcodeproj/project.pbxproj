@@ -40,9 +40,9 @@
 		076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
 		076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
 		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iKY.xcassets; sourceTree = "<group>"; };
-		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = ShushTest/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
-		079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSoundAdditions.m; path = ShushTest/3rdParty/ISSoundAdditions/ISSoundAdditions.m; sourceTree = SOURCE_ROOT; };
-		079ECAC81C9EF2E300EBAABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ShushTest/3rdParty/ISSoundAdditions/README.md; sourceTree = SOURCE_ROOT; };
+		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
+		079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSoundAdditions.m; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.m; sourceTree = SOURCE_ROOT; };
+		079ECAC81C9EF2E300EBAABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = iKY/3rdParty/ISSoundAdditions/README.md; sourceTree = SOURCE_ROOT; };
 		079ECAD21C9EF5A000EBAABA /* NSApplication+MXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+MXUtilities.h"; sourceTree = "<group>"; };
 		079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+MXUtilities.m"; sourceTree = "<group>"; };
 		07BA02711AB8331C00ADC1FB /* iKY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +167,7 @@
 				07BA02741AB8331C00ADC1FB /* Supporting Files */,
 			);
 			name = iKY;
-			path = ShushTest;
+			path = iKY;
 			sourceTree = "<group>";
 		};
 		07BA02741AB8331C00ADC1FB /* Supporting Files */ = {
@@ -246,7 +246,7 @@
 			dependencies = (
 			);
 			name = iKY;
-			productName = ShushTest;
+			productName = iKY;
 			productReference = 07BA02711AB8331C00ADC1FB /* iKY.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -414,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ShushTest/Info.plist;
+				INFOPLIST_FILE = iKY/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DarkByte.iKY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ShushTest/Info.plist;
+				INFOPLIST_FILE = iKY/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DarkByte.iKY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
