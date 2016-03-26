@@ -2,8 +2,8 @@
 //  iKYPreferencesController.m
 //  iKY
 //
-//  Created by Victor Pop on 24/03/16.
-//  Copyright © 2016 Victor Pop. All rights reserved.
+//  Created by DarkByte on 24/03/16.
+//  Copyright © 2016 DarkByte. All rights reserved.
 //
 
 #import "iKYPreferencesController.h"
@@ -14,7 +14,6 @@
 #define SharedAppDelegate ((AppDelegate *)[[NSApplication sharedApplication] delegate])
 
 static NSString *const kAutoStart = @"autoStart";
-static NSString *const kUseGlobalShortcut = @"useGlobalShortcut";
 
 @interface iKYPreferencesController () {
     NSUserDefaults *defaults;
@@ -34,6 +33,9 @@ static NSString *const kUseGlobalShortcut = @"useGlobalShortcut";
 - (void)loadPreferences
 {
     self->defaults = [NSUserDefaults standardUserDefaults];
+
+    self.autoStartCheckbox.state = [self->defaults integerForKey:kAutoStart];
+
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     self->_masShortcutView.shortcutValue = globalShortcut;
 
@@ -41,9 +43,6 @@ static NSString *const kUseGlobalShortcut = @"useGlobalShortcut";
         [self->defaults setObject:sender.shortcutValue.data forKey:kGlobalShortcut];
         [SharedAppDelegate registerHotKey:sender.shortcutValue];
     };
-
-    self.autoStartCheckbox.state = [[NSUserDefaults standardUserDefaults] integerForKey:kAutoStart];
-    self.globalShortcutCheckbox.state = [[NSUserDefaults standardUserDefaults] integerForKey:kUseGlobalShortcut];
 }
 
 - (IBAction)autoStartAction:(id)sender
@@ -51,12 +50,6 @@ static NSString *const kUseGlobalShortcut = @"useGlobalShortcut";
     [iKYUtils setLaunchOnLogin:self.autoStartCheckbox.state == NSOnState];
 
     [self->defaults setInteger:self.autoStartCheckbox.state forKey:kAutoStart];
-    [self->defaults synchronize];
-}
-
-- (IBAction)globalShortcutAction:(id)sender
-{
-    [self->defaults setInteger:self.globalShortcutCheckbox.state forKey:kUseGlobalShortcut];
     [self->defaults synchronize];
 }
 

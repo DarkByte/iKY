@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  iKY
 //
-//  Created by Victor Pop on 17/03/15.
-//  Copyright (c) 2016 Victor Pop. All rights reserved.
+//  Created by DarkByte on 17/03/15.
+//  Copyright (c) 2016 DarkByte. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -30,20 +30,15 @@
 
 @implementation AppDelegate
 
-#define MIKE_ON @"mike_on"
-#define MIKE_OFF @"mike_off"
-
 - (void)iKYinit {
     [iKYUtils suicideIfDuplicate];
     [self showMicEnabled:![NSSound isInputMuted]];
-    
-    NSWindow *mainWindow = [NSApplication sharedApplication].mainWindow;
-    [mainWindow setLevel:CGWindowLevelForKey(kCGMaximumWindowLevelKey)];
 
     [self iKYsetup];
 }
 
 - (void)iKYsetup {
+    [iKYUtils bringMainWindowOnTop];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     
     self->defaults = [NSUserDefaults standardUserDefaults];
@@ -61,30 +56,9 @@
                                                           target:self action:@selector(toggleMicAction:) object:nil];
 }
 
-#pragma mark - User notifications
-
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
-{
-    return YES;
-}
-
-- (void)notifyUser:(BOOL)micEnabled {
-    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
-    
-    NSUserNotification *mikeNotification = [[NSUserNotification alloc] init];
-    
-    mikeNotification.title = [NSString stringWithFormat:@"%@.", micEnabled ? @"MIKE: ON" : @"Mike: off"];
-    mikeNotification.informativeText = [NSString stringWithFormat:@"Microphone status: %@ (toggle with ⌘⌃M)" , micEnabled ? @"enabled" : @"disabled"];
-    
-    mikeNotification.soundName = micEnabled ? MIKE_ON : MIKE_OFF;
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:mikeNotification];
-}
-
 #pragma mark - Microphone related stuff
 
-- (void)showMicEnabled:(BOOL)micEnabled
-{
+- (void)showMicEnabled:(BOOL)micEnabled {
     [self.micButton setImage:[NSImage imageNamed:micEnabled ? MIKE_ON : MIKE_OFF]];
 }
 
@@ -103,6 +77,26 @@
     }
 
     [preferencesPanel showWindow:self];
+}
+
+#pragma mark - User notifications
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+    return YES;
+}
+
+- (void)notifyUser:(BOOL)micEnabled {
+    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
+    
+    NSUserNotification *mikeNotification = [[NSUserNotification alloc] init];
+    
+    mikeNotification.title = [NSString stringWithFormat:@"%@.", micEnabled ? @"MIKE: ON" : @"Mike: off"];
+    mikeNotification.informativeText = [NSString stringWithFormat:@"Microphone status: %@ (toggle with ⌘⌃M)" , micEnabled ? @"enabled" : @"disabled"];
+    
+    mikeNotification.soundName = micEnabled ? MIKE_ON : MIKE_OFF;
+    // use .contentImage for better/easier to understand UX
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:mikeNotification];
 }
 
 #pragma mark - Application delegate

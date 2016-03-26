@@ -8,7 +8,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="iKYPreferencesController">
             <connections>
                 <outlet property="autoStartCheckbox" destination="YKr-UX-XpL" id="JGr-Sk-RH3"/>
-                <outlet property="globalShortcutCheckbox" destination="g62-ud-anc" id="q0e-ZI-gkd"/>
                 <outlet property="masShortcutView" destination="Kvu-af-YsY" id="3Yk-6v-Mcz"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -40,9 +39,6 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                        <connections>
-                            <action selector="globalShortcutAction:" target="-2" id="yqc-lG-Dd1"/>
-                        </connections>
                     </button>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-af-YsY" customClass="MASShortcutView">
                         <rect key="frame" x="20" y="122" width="196" height="20"/>
@@ -64,7 +60,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="309" y="359"/>
+            <point key="canvasLocation" x="553" y="345"/>
         </window>
     </objects>
     <resources>

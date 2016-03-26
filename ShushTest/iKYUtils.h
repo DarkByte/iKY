@@ -2,8 +2,8 @@
 //  iKYUtils.h
 //  iKY
 //
-//  Created by Victor Pop on 26/03/16.
-//  Copyright © 2016 Victor Pop. All rights reserved.
+//  Created by DarkByte on 26/03/16.
+//  Copyright © 2016 DarkByte. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -12,5 +12,6 @@
 
 + (void)suicideIfDuplicate;
 + (void)setLaunchOnLogin:(BOOL)launchOnLogin;
++ (void)bringMainWindowOnTop;
 
 @end

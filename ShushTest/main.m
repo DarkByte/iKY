@@ -2,8 +2,8 @@
 //  main.m
 //  iKY
 //
-//  Created by Victor Pop on 17/03/15.
-//  Copyright (c) 2016 Victor Pop. All rights reserved.
+//  Created by DarkByte on 17/03/15.
+//  Copyright (c) 2016 DarkByte. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

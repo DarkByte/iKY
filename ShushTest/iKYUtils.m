@@ -2,8 +2,8 @@
 //  iKYUtils.m
 //  iKY
 //
-//  Created by Victor Pop on 26/03/16.
-//  Copyright © 2016 Victor Pop. All rights reserved.
+//  Created by DarkByte on 26/03/16.
+//  Copyright © 2016 DarkByte. All rights reserved.
 //
 
 #import "iKYUtils.h"
@@ -36,10 +36,11 @@
         if (itemRef) {
             CFRelease(itemRef);
         }
-    } else {
+    }
+    else {
         LSSharedFileListRef loginItemsListRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
         CFArrayRef snapshotRef = LSSharedFileListCopySnapshot(loginItemsListRef, NULL);
-        NSArray* loginItems = (__bridge NSArray *)(snapshotRef);
+        NSArray *loginItems = (__bridge NSArray *)(snapshotRef);
         
         for (id item in loginItems) {
             LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
@@ -52,6 +53,12 @@
             }
         }
     }
+}
+
++ (void)bringMainWindowOnTop
+{
+    NSWindow *mainWindow = [NSApplication sharedApplication].mainWindow;
+    [mainWindow setLevel:CGWindowLevelForKey(kCGMaximumWindowLevelKey)];
 }
 
 @end
