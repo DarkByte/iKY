@@ -1,0 +1,9 @@
+http://www.flaticon.com/free-icon/open-microphone-inside-a-rounded-square_27666
+
+- auto-start
+
+- optiune de a afisa notificarea (ninja-mode?)
+- hide main window
+
+- custom hotkey
+- icoana in bara de sus (mike on / off)

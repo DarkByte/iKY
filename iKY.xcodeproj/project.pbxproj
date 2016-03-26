@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		070D36001AB98096007250D5 /* mike_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 070D35FE1AB98096007250D5 /* mike_off.png */; };
+		070D36021AB98096007250D5 /* mike_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 070D35FF1AB98096007250D5 /* mike_on.png */; };
+		076060951C9DB43800FBC934 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076060941C9DB43800FBC934 /* Carbon.framework */; };
+		076060A81C9DB74C00FBC934 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076060A71C9DB74C00FBC934 /* AppKit.framework */; };
+		076060C11C9DB77C00FBC934 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */; };
+		076060C51C9DB77C00FBC934 /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */; };
+		0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0763B2201C9DC8D90033628E /* iKY.xcassets */; };
+		079ECAC91C9EF2E300EBAABA /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */; };
+		079ECAD41C9EF5A000EBAABA /* NSApplication+MXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */; };
+		07BA02781AB8331C00ADC1FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BA02771AB8331C00ADC1FB /* AppDelegate.m */; };
+		07BE77061CA59184009D73AE /* MASShortcutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE77031CA59184009D73AE /* MASShortcutBinder.m */; };
+		07BE77071CA59184009D73AE /* MASShortcutMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE77051CA59184009D73AE /* MASShortcutMonitor.m */; };
+		07BE770A1CA5919C009D73AE /* MASHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE77091CA5919C009D73AE /* MASHotKey.m */; };
+		07BE770D1CA71295009D73AE /* iKYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE770C1CA71295009D73AE /* iKYUtils.m */; };
+		07C7FCEB1C9DBAAB00236E22 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BA027D1AB8331C00ADC1FB /* MainMenu.xib */; };
+		07C7FCEE1C9DBAC400236E22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BA02791AB8331C00ADC1FB /* main.m */; };
+		07E044D71CA14DD60043ECA2 /* mike_off.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 07E044D51CA14DD60043ECA2 /* mike_off.aiff */; };
+		07E044D81CA14DD60043ECA2 /* mike_on.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 07E044D61CA14DD60043ECA2 /* mike_on.aiff */; };
+		07F59B301CA42789007FA9B0 /* iKYPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F59B2E1CA42789007FA9B0 /* iKYPreferencesController.m */; };
+		07F59B311CA42789007FA9B0 /* iKYPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F59B2F1CA42789007FA9B0 /* iKYPreferencesController.xib */; };
+		3E65F8F4A03C75352255570B /* libPods-iKY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4B7E4DB3A629B3ECE44F7D /* libPods-iKY.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04537019F6B79AEB35808851 /* Pods-iKY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iKY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iKY/Pods-iKY.debug.xcconfig"; sourceTree = "<group>"; };
+		070D35FE1AB98096007250D5 /* mike_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mike_off.png; sourceTree = "<group>"; };
+		070D35FF1AB98096007250D5 /* mike_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mike_on.png; sourceTree = "<group>"; };
+		0758499C0D4A53FF4ECCEA3A /* Pods-iKY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iKY.release.xcconfig"; path = "Pods/Target Support Files/Pods-iKY/Pods-iKY.release.xcconfig"; sourceTree = "<group>"; };
+		076060941C9DB43800FBC934 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		076060A71C9DB74C00FBC934 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		076060AF1C9DB77C00FBC934 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
+		076060B11C9DB77C00FBC934 /* DDHotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyTextField.h; sourceTree = "<group>"; };
+		076060B21C9DB77C00FBC934 /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyTextField.m; sourceTree = "<group>"; };
+		076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iKY.xcassets; sourceTree = "<group>"; };
+		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = ShushTest/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
+		079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSoundAdditions.m; path = ShushTest/3rdParty/ISSoundAdditions/ISSoundAdditions.m; sourceTree = SOURCE_ROOT; };
+		079ECAC81C9EF2E300EBAABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ShushTest/3rdParty/ISSoundAdditions/README.md; sourceTree = SOURCE_ROOT; };
+		079ECAD21C9EF5A000EBAABA /* NSApplication+MXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+MXUtilities.h"; sourceTree = "<group>"; };
+		079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+MXUtilities.m"; sourceTree = "<group>"; };
+		07BA02711AB8331C00ADC1FB /* iKY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BA02751AB8331C00ADC1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07BA02761AB8331C00ADC1FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		07BA02771AB8331C00ADC1FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		07BA02791AB8331C00ADC1FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07BA027E1AB8331C00ADC1FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		07BE77021CA59184009D73AE /* MASShortcutBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutBinder.h; sourceTree = "<group>"; };
+		07BE77031CA59184009D73AE /* MASShortcutBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutBinder.m; sourceTree = "<group>"; };
+		07BE77041CA59184009D73AE /* MASShortcutMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutMonitor.h; sourceTree = "<group>"; };
+		07BE77051CA59184009D73AE /* MASShortcutMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutMonitor.m; sourceTree = "<group>"; };
+		07BE77081CA5919B009D73AE /* MASHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASHotKey.h; sourceTree = "<group>"; };
+		07BE77091CA5919C009D73AE /* MASHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASHotKey.m; sourceTree = "<group>"; };
+		07BE770B1CA71295009D73AE /* iKYUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iKYUtils.h; sourceTree = "<group>"; };
+		07BE770C1CA71295009D73AE /* iKYUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iKYUtils.m; sourceTree = "<group>"; };
+		07E044D51CA14DD60043ECA2 /* mike_off.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = mike_off.aiff; sourceTree = "<group>"; };
+		07E044D61CA14DD60043ECA2 /* mike_on.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = mike_on.aiff; sourceTree = "<group>"; };
+		07F59B2D1CA42789007FA9B0 /* iKYPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iKYPreferencesController.h; sourceTree = "<group>"; };
+		07F59B2E1CA42789007FA9B0 /* iKYPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iKYPreferencesController.m; sourceTree = "<group>"; };
+		07F59B2F1CA42789007FA9B0 /* iKYPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iKYPreferencesController.xib; sourceTree = "<group>"; };
+		9C4B7E4DB3A629B3ECE44F7D /* libPods-iKY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iKY.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07BA026E1AB8331C00ADC1FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076060A81C9DB74C00FBC934 /* AppKit.framework in Frameworks */,
+				076060951C9DB43800FBC934 /* Carbon.framework in Frameworks */,
+				3E65F8F4A03C75352255570B /* libPods-iKY.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		070D35F71AB87576007250D5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				070D35FE1AB98096007250D5 /* mike_off.png */,
+				070D35FF1AB98096007250D5 /* mike_on.png */,
+				0763B2201C9DC8D90033628E /* iKY.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		076060961C9DB44400FBC934 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				076060A71C9DB74C00FBC934 /* AppKit.framework */,
+				076060941C9DB43800FBC934 /* Carbon.framework */,
+				9C4B7E4DB3A629B3ECE44F7D /* libPods-iKY.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0760609D1C9DB6D200FBC934 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				07BE77011CA59184009D73AE /* MASShortcut */,
+				079ECAD11C9EF5A000EBAABA /* NSApplication+MXUtilities */,
+				07BA02941AB8334300ADC1FB /* ISSoundAdditions */,
+				076060A91C9DB77C00FBC934 /* DDHotKey */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		076060A91C9DB77C00FBC934 /* DDHotKey */ = {
+			isa = PBXGroup;
+			children = (
+				076060AF1C9DB77C00FBC934 /* DDHotKeyCenter.h */,
+				076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */,
+				076060B11C9DB77C00FBC934 /* DDHotKeyTextField.h */,
+				076060B21C9DB77C00FBC934 /* DDHotKeyTextField.m */,
+				076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */,
+				076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */,
+			);
+			path = DDHotKey;
+			sourceTree = "<group>";
+		};
+		079ECAD11C9EF5A000EBAABA /* NSApplication+MXUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				079ECAD21C9EF5A000EBAABA /* NSApplication+MXUtilities.h */,
+				079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */,
+			);
+			path = "NSApplication+MXUtilities";
+			sourceTree = "<group>";
+		};
+		079ECAD51CA1476E00EBAABA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				07E044D51CA14DD60043ECA2 /* mike_off.aiff */,
+				07E044D61CA14DD60043ECA2 /* mike_on.aiff */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		07BA02681AB8331C00ADC1FB = {
+			isa = PBXGroup;
+			children = (
+				07BA02731AB8331C00ADC1FB /* iKY */,
+				076060961C9DB44400FBC934 /* Frameworks */,
+				07BA02721AB8331C00ADC1FB /* Products */,
+				E1B5B7C46B4EF9C0D92BEF63 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		07BA02721AB8331C00ADC1FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07BA02711AB8331C00ADC1FB /* iKY.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07BA02731AB8331C00ADC1FB /* iKY */ = {
+			isa = PBXGroup;
+			children = (
+				07BA02761AB8331C00ADC1FB /* AppDelegate.h */,
+				07BA02771AB8331C00ADC1FB /* AppDelegate.m */,
+				07BA027D1AB8331C00ADC1FB /* MainMenu.xib */,
+				07BE76D11CA56283009D73AE /* Preferences */,
+				079ECAD51CA1476E00EBAABA /* Sounds */,
+				070D35F71AB87576007250D5 /* Images */,
+				0760609D1C9DB6D200FBC934 /* 3rdParty */,
+				07BA02741AB8331C00ADC1FB /* Supporting Files */,
+				07BE770B1CA71295009D73AE /* iKYUtils.h */,
+				07BE770C1CA71295009D73AE /* iKYUtils.m */,
+			);
+			name = iKY;
+			path = ShushTest;
+			sourceTree = "<group>";
+		};
+		07BA02741AB8331C00ADC1FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07BA02751AB8331C00ADC1FB /* Info.plist */,
+				07BA02791AB8331C00ADC1FB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07BA02941AB8334300ADC1FB /* ISSoundAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				079ECAC81C9EF2E300EBAABA /* README.md */,
+				079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */,
+				079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */,
+			);
+			name = ISSoundAdditions;
+			path = ../ISSoundAdditions;
+			sourceTree = "<group>";
+		};
+		07BE76D11CA56283009D73AE /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				07F59B2D1CA42789007FA9B0 /* iKYPreferencesController.h */,
+				07F59B2E1CA42789007FA9B0 /* iKYPreferencesController.m */,
+				07F59B2F1CA42789007FA9B0 /* iKYPreferencesController.xib */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		07BE77011CA59184009D73AE /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				07BE77081CA5919B009D73AE /* MASHotKey.h */,
+				07BE77091CA5919C009D73AE /* MASHotKey.m */,
+				07BE77021CA59184009D73AE /* MASShortcutBinder.h */,
+				07BE77031CA59184009D73AE /* MASShortcutBinder.m */,
+				07BE77041CA59184009D73AE /* MASShortcutMonitor.h */,
+				07BE77051CA59184009D73AE /* MASShortcutMonitor.m */,
+			);
+			path = MASShortcut;
+			sourceTree = "<group>";
+		};
+		E1B5B7C46B4EF9C0D92BEF63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04537019F6B79AEB35808851 /* Pods-iKY.debug.xcconfig */,
+				0758499C0D4A53FF4ECCEA3A /* Pods-iKY.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07BA02701AB8331C00ADC1FB /* iKY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07BA028E1AB8331C00ADC1FB /* Build configuration list for PBXNativeTarget "iKY" */;
+			buildPhases = (
+				DAF78FF9CBE4B3D2F9BE62C6 /* Check Pods Manifest.lock */,
+				07BA026D1AB8331C00ADC1FB /* Sources */,
+				07BA026E1AB8331C00ADC1FB /* Frameworks */,
+				07BA026F1AB8331C00ADC1FB /* Resources */,
+				438C36327376BFB51EB6A572 /* Embed Pods Frameworks */,
+				7C894EF2E227A95FC347A472 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iKY;
+			productName = ShushTest;
+			productReference = 07BA02711AB8331C00ADC1FB /* iKY.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07BA02691AB8331C00ADC1FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Victor Pop";
+				TargetAttributes = {
+					07BA02701AB8331C00ADC1FB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 07BA026C1AB8331C00ADC1FB /* Build configuration list for PBXProject "iKY" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				English,
+			);
+			mainGroup = 07BA02681AB8331C00ADC1FB;
+			productRefGroup = 07BA02721AB8331C00ADC1FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07BA02701AB8331C00ADC1FB /* iKY */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07BA026F1AB8331C00ADC1FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F59B311CA42789007FA9B0 /* iKYPreferencesController.xib in Resources */,
+				07C7FCEB1C9DBAAB00236E22 /* MainMenu.xib in Resources */,
+				07E044D71CA14DD60043ECA2 /* mike_off.aiff in Resources */,
+				070D36021AB98096007250D5 /* mike_on.png in Resources */,
+				0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */,
+				070D36001AB98096007250D5 /* mike_off.png in Resources */,
+				07E044D81CA14DD60043ECA2 /* mike_on.aiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		438C36327376BFB51EB6A572 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iKY/Pods-iKY-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C894EF2E227A95FC347A472 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iKY/Pods-iKY-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAF78FF9CBE4B3D2F9BE62C6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07BA026D1AB8331C00ADC1FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07C7FCEE1C9DBAC400236E22 /* main.m in Sources */,
+				07BA02781AB8331C00ADC1FB /* AppDelegate.m in Sources */,
+				07F59B301CA42789007FA9B0 /* iKYPreferencesController.m in Sources */,
+				07BE770A1CA5919C009D73AE /* MASHotKey.m in Sources */,
+				076060C11C9DB77C00FBC934 /* DDHotKeyCenter.m in Sources */,
+				07BE77071CA59184009D73AE /* MASShortcutMonitor.m in Sources */,
+				076060C51C9DB77C00FBC934 /* DDHotKeyUtilities.m in Sources */,
+				07BE770D1CA71295009D73AE /* iKYUtils.m in Sources */,
+				079ECAC91C9EF2E300EBAABA /* ISSoundAdditions.m in Sources */,
+				079ECAD41C9EF5A000EBAABA /* NSApplication+MXUtilities.m in Sources */,
+				07BE77061CA59184009D73AE /* MASShortcutBinder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		07BA027D1AB8331C00ADC1FB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07BA027E1AB8331C00ADC1FB /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07BA028C1AB8331C00ADC1FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07BA028D1AB8331C00ADC1FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		07BA028F1AB8331C00ADC1FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04537019F6B79AEB35808851 /* Pods-iKY.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ShushTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DarkByte.iKY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07BA02901AB8331C00ADC1FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0758499C0D4A53FF4ECCEA3A /* Pods-iKY.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ShushTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DarkByte.iKY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07BA026C1AB8331C00ADC1FB /* Build configuration list for PBXProject "iKY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BA028C1AB8331C00ADC1FB /* Debug */,
+				07BA028D1AB8331C00ADC1FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07BA028E1AB8331C00ADC1FB /* Build configuration list for PBXNativeTarget "iKY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BA028F1AB8331C00ADC1FB /* Debug */,
+				07BA02901AB8331C00ADC1FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07BA02691AB8331C00ADC1FB /* Project object */;
+}
