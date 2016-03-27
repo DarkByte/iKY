@@ -68,17 +68,17 @@
         <window title="iKY" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="0.0" y="0.0" width="204" height="204"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="154" height="154"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1257"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="204" height="204"/>
+                <rect key="frame" x="0.0" y="0.0" width="154" height="154"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="hYe-xu-8AG">
-                        <rect key="frame" x="2" y="2" width="200" height="200"/>
+                        <rect key="frame" x="2" y="2" width="150" height="150"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="PhN-D4-FsQ"/>
-                            <constraint firstAttribute="width" constant="200" id="zye-dl-HsC"/>
+                            <constraint firstAttribute="height" constant="150" id="PhN-D4-FsQ"/>
+                            <constraint firstAttribute="width" constant="150" id="zye-dl-HsC"/>
                         </constraints>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="5cL-pS-0f2">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -96,7 +96,7 @@
                     <constraint firstAttribute="bottom" secondItem="hYe-xu-8AG" secondAttribute="bottom" constant="2" id="q4T-TX-7cz"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="644" y="509"/>
+            <point key="canvasLocation" x="524" y="363"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="jbJ-9l-rDZ"/>
     </objects>
