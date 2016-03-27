@@ -15,6 +15,7 @@
 @interface AppDelegate () {
     NSUserDefaults *defaults;
 
+    NSString *lastShortcutString;
     DDHotKey *lastShortcut;
     DDHotKeyCenter *hotKeyCenter;
     
@@ -113,8 +114,8 @@
     
     NSUserNotification *mikeNotification = [[NSUserNotification alloc] init];
     
-    mikeNotification.title = [NSString stringWithFormat:@"%@.", micEnabled ? @"MIKE: ON" : @"Mike: off"];
-    mikeNotification.informativeText = [NSString stringWithFormat:@"Microphone status: %@ (toggle with ⌘⌃M)" , micEnabled ? @"enabled" : @"disabled"];
+    mikeNotification.title = [NSString stringWithFormat:@"Microphone: %@", micEnabled ? @"ENABLED" : @"disabled"];
+    mikeNotification.informativeText = [NSString stringWithFormat:@"Toggle with %@", self->lastShortcutString];
     
     mikeNotification.soundName = micEnabled ? MIKE_ON : MIKE_OFF;
     mikeNotification.contentImage = [NSImage imageNamed:micEnabled ? MIKE_ON : MIKE_OFF];
@@ -139,6 +140,8 @@
 #pragma mark - System-wide keyboard shortcut binder
 
 - (void)registerHotKey:(MASShortcut *)customKey {
+    self->lastShortcutString = customKey.description;
+
     hotKeyCenter = [DDHotKeyCenter sharedHotKeyCenter];
     
     if (self->lastShortcut) {
