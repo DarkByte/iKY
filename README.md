@@ -6,8 +6,8 @@ Screenshots below (main window, user notification, preferences window, menu bar 
 
 ON state
 
-![iKY screenshot 1](iKY_on.png "iKY screenshot 1")
+![iKY screenshot 1](iKY_on.png?raw=true "iKY screenshot 1")
 
 OFF state
 
-![iKY screenshot 2](iKY_off.png "iKY screenshot 2")
+![iKY screenshot 2](iKY_off.png?raw=true "iKY screenshot 2")
