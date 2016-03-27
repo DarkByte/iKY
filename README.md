@@ -5,6 +5,9 @@ iKY is able to turn on/off the system microphone, thus ensuring "compatibility" 
 
 Of course, as any companion worth its salt, iKY can be started along with OS X (by simply using the checkbox from Preferences).
 
+For downloading the latest version of iKY, check the "Releases" folder.
+
+
 Screenshots below (main window, user notification, preferences window, menu bar icon):
 
 ON state
