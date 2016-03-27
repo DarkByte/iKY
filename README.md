@@ -1,7 +1,7 @@
 # iKY
 Ever been in an endless hangouts/webex/you-name-it meeting? Ever cheated on it by resuming to code only to be brought back to reality by someone mentioning your name and asking you a question? Frantically looking for the un-mute button on the conference application view is not my idea of fun. iKY was born as a solution to this problem.
 
-iKY is able to turn on/off the system microphone, thus ensuring "compatibility" with any meeting application. The microphone can be toggled by tapping the main window's image, by selecting the "Toggle microphone" option from the top bar menu or (my personal favorite) by using a system-wide custom keyboard shortcut.
+iKY is able to turn on/off the system microphone, thus ensuring "compatibility" with any (OS X) VoIP app. The microphone can be toggled by tapping the main window's image, by selecting the "Toggle microphone" option from the top bar menu or (my personal favorite) by using a system-wide custom keyboard shortcut.
 
 Of course, as any companion worth its salt, iKY can be started along with OS X (by simply using the checkbox from Preferences).
 
