@@ -12,6 +12,6 @@
 
 + (void)suicideIfDuplicate;
 + (void)setLaunchOnLogin:(BOOL)launchOnLogin;
-+ (void)bringMainWindowOnTop;
++ (void)bringWindowOnTop:(NSWindow *)window;
 
 @end

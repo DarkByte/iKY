@@ -55,10 +55,9 @@
     }
 }
 
-+ (void)bringMainWindowOnTop
++ (void)bringWindowOnTop:(NSWindow *)window
 {
-    NSWindow *mainWindow = [NSApplication sharedApplication].mainWindow;
-    [mainWindow setLevel:CGWindowLevelForKey(kCGMaximumWindowLevelKey)];
+    [window setLevel:CGWindowLevelForKey(kCGMaximumWindowLevelKey)];
 }
 
 @end

@@ -24,6 +24,7 @@
     iKYPreferencesController *preferencesPanel;
 
     NSStatusItem *statusItem;
+    NSMenu *barMenu;
 }
 
 @property (weak) IBOutlet NSWindow *window;
@@ -42,32 +43,36 @@
 }
 
 - (void)iKYsetup {
-    [iKYUtils bringMainWindowOnTop];
+    [iKYUtils bringWindowOnTop:[NSApplication sharedApplication].mainWindow];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    
+
     self->defaults = [NSUserDefaults standardUserDefaults];
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
 }
 
+#pragma mark - Menu bar icon
+
 - (void)initAppIcon {
     self->statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-    
+    [self initTopMenu];
+}
+
+- (void)initTopMenu {
+    self->barMenu = [NSMenu new];
+
+    [self->barMenu addItemWithTitle:@"Toggle microphone" action:@selector(toggleMicAction:) keyEquivalent:@""];
+    [self->barMenu addItem:NSMenuItem.separatorItem];
+    [self->barMenu addItemWithTitle:@"Preferences" action:@selector(openPreferencesPanel:) keyEquivalent:@","];
+    [self->barMenu addItem:NSMenuItem.separatorItem];
+    [self->barMenu addItemWithTitle:@"Quit" action:@selector(openPreferencesPanel:) keyEquivalent:@""];
+
+    self->statusItem.menu = self->barMenu;
 }
 
 - (void)updateAppIconImage:(NSString *)mikeImageName {
     NSString *imageName = [NSString stringWithFormat:@"menu_%@", mikeImageName];
     self->statusItem.image =[NSImage imageNamed:imageName];
-}
-
-- (void)registerHotKey:(MASShortcut *)customKey {
-    hotKeyCenter = [DDHotKeyCenter sharedHotKeyCenter];
-
-    if (self->lastShortcut) {
-        [hotKeyCenter unregisterHotKey:self->lastShortcut];
-    }
-    self->lastShortcut = [hotKeyCenter registerHotKeyWithKeyCode:customKey.keyCode modifierFlags:customKey.modifierFlags
-                                                          target:self action:@selector(toggleMicAction:) object:nil];
 }
 
 #pragma mark - Microphone related stuff
@@ -94,6 +99,7 @@
     }
 
     [preferencesPanel showWindow:self];
+    [iKYUtils bringWindowOnTop:preferencesPanel.window];
 }
 
 #pragma mark - User notifications
@@ -128,6 +134,18 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
     [hotKeyCenter unregisterHotKeyWithKeyCode:keyCode modifierFlags:modifiers];
+}
+
+#pragma mark - System-wide keyboard shortcut binder
+
+- (void)registerHotKey:(MASShortcut *)customKey {
+    hotKeyCenter = [DDHotKeyCenter sharedHotKeyCenter];
+    
+    if (self->lastShortcut) {
+        [hotKeyCenter unregisterHotKey:self->lastShortcut];
+    }
+    self->lastShortcut = [hotKeyCenter registerHotKeyWithKeyCode:customKey.keyCode modifierFlags:customKey.modifierFlags
+                                                          target:self action:@selector(toggleMicAction:) object:nil];
 }
 
 @end
