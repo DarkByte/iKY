@@ -22,6 +22,8 @@
     NSUInteger modifiers;
 
     iKYPreferencesController *preferencesPanel;
+
+    NSStatusItem *statusItem;
 }
 
 @property (weak) IBOutlet NSWindow *window;
@@ -32,8 +34,10 @@
 
 - (void)iKYinit {
     [iKYUtils suicideIfDuplicate];
-    [self showMicEnabled:![NSSound isInputMuted]];
 
+    [self initAppIcon];
+    [self showMicEnabled:![NSSound isInputMuted]];
+    
     [self iKYsetup];
 }
 
@@ -44,6 +48,16 @@
     self->defaults = [NSUserDefaults standardUserDefaults];
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
+}
+
+- (void)initAppIcon {
+    self->statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    
+}
+
+- (void)updateAppIconImage:(NSString *)mikeImageName {
+    NSString *imageName = [NSString stringWithFormat:@"menu_%@", mikeImageName];
+    self->statusItem.image =[NSImage imageNamed:imageName];
 }
 
 - (void)registerHotKey:(MASShortcut *)customKey {
@@ -59,7 +73,10 @@
 #pragma mark - Microphone related stuff
 
 - (void)showMicEnabled:(BOOL)micEnabled {
-    [self.micButton setImage:[NSImage imageNamed:micEnabled ? MIKE_ON : MIKE_OFF]];
+    NSString *mikeImageName = micEnabled ? MIKE_ON : MIKE_OFF;
+
+    [self.micButton setImage:[NSImage imageNamed:mikeImageName]];
+    [self updateAppIconImage:mikeImageName];
 }
 
 - (IBAction)toggleMicAction:(id)sender {
@@ -106,7 +123,7 @@
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
-    return YES;
+    return NO;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
