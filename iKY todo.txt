@@ -1,5 +1,3 @@
 Options:
 	- show/hide user notification (ninja-mode?)
-	- hide main window
-
-Top-bar icon (mike on / off)
+	- show/hide main window
