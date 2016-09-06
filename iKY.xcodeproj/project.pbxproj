@@ -12,6 +12,7 @@
 		076060C11C9DB77C00FBC934 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */; };
 		076060C51C9DB77C00FBC934 /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */; };
 		0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0763B2201C9DC8D90033628E /* iKY.xcassets */; };
+		079D5FE21D7F50AF00E6CD7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 079D5FE11D7F50AF00E6CD7F /* Localizable.strings */; };
 		079ECAC91C9EF2E300EBAABA /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */; };
 		079ECAD41C9EF5A000EBAABA /* NSApplication+MXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */; };
 		07BA02781AB8331C00ADC1FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BA02771AB8331C00ADC1FB /* AppDelegate.m */; };
@@ -36,6 +37,8 @@
 		076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
 		076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
 		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iKY.xcassets; path = Images/iKY.xcassets; sourceTree = "<group>"; };
+		079D5FE11D7F50AF00E6CD7F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		079D5FE31D7F56EA00E6CD7F /* iKYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iKYConstants.h; sourceTree = "<group>"; };
 		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
 		079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSoundAdditions.m; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.m; sourceTree = SOURCE_ROOT; };
 		079ECAC81C9EF2E300EBAABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = iKY/3rdParty/ISSoundAdditions/README.md; sourceTree = SOURCE_ROOT; };
@@ -159,6 +162,7 @@
 				0763B2201C9DC8D90033628E /* iKY.xcassets */,
 				07BA02751AB8331C00ADC1FB /* Info.plist */,
 				07BA02791AB8331C00ADC1FB /* main.m */,
+				079D5FE11D7F50AF00E6CD7F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +204,7 @@
 			children = (
 				07BE770B1CA71295009D73AE /* iKYUtils.h */,
 				07BE770C1CA71295009D73AE /* iKYUtils.m */,
+				079D5FE31D7F56EA00E6CD7F /* iKYConstants.h */,
 			);
 			name = iKYUtils;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F59B311CA42789007FA9B0 /* iKYPreferencesController.xib in Resources */,
+				079D5FE21D7F50AF00E6CD7F /* Localizable.strings in Resources */,
 				07C7FCEB1C9DBAAB00236E22 /* MainMenu.xib in Resources */,
 				07E044D71CA14DD60043ECA2 /* mike_off.aiff in Resources */,
 				0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */,

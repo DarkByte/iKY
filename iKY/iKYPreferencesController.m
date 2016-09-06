@@ -13,13 +13,12 @@
 
 #define SharedAppDelegate ((AppDelegate *)[[NSApplication sharedApplication] delegate])
 
-static NSString *const kAutoStart = @"autoStart";
-
 @interface iKYPreferencesController () {
     NSUserDefaults *defaults;
 }
 
 @property (weak) IBOutlet MASShortcutView *masShortcutView;
+@property (weak) IBOutlet NSTextField *appVersionLabel;
 
 @end
 
@@ -32,8 +31,13 @@ static NSString *const kAutoStart = @"autoStart";
 
 - (void)loadPreferences
 {
+
+    self.appVersionLabel.stringValue = [NSString stringWithFormat:@"%@ v%@", [iKYUtils sharedUtils].appName, [iKYUtils sharedUtils].appBuild];
+
     self->defaults = [NSUserDefaults standardUserDefaults];
 
+    self.playSoundCheckbox.state = [self->defaults integerForKey:kPlaySound];
+    self.showNotificationsCheckbox.state = [self->defaults integerForKey:kShowNotifications];
     self.autoStartCheckbox.state = [self->defaults integerForKey:kAutoStart];
 
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
@@ -45,11 +49,19 @@ static NSString *const kAutoStart = @"autoStart";
     };
 }
 
+- (IBAction)playSoundAction:(id)sender {
+    [self->defaults setInteger:self.playSoundCheckbox.state forKey:kPlaySound];
+}
+
+- (IBAction)showNotificationAction:(id)sender {
+    [self->defaults setInteger:self.showNotificationsCheckbox.state forKey:kShowNotifications];
+}
+
 - (IBAction)autoStartAction:(id)sender
 {
     [iKYUtils setLaunchOnLogin:self.autoStartCheckbox.state == NSOnState];
-
     [self->defaults setInteger:self.autoStartCheckbox.state forKey:kAutoStart];
+
     [self->defaults synchronize];
 }
 

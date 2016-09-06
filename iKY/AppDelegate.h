@@ -10,11 +10,6 @@
 #import "MASShortcut.h"
 #import "iKYUtils.h"
 
-static NSString *const kGlobalShortcut = @"iKY_globalShortcut";
-
-static NSString *const MIKE_ON = @"mike_on";
-static NSString *const MIKE_OFF = @"mike_off";
-
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
 @property (weak) IBOutlet NSButton *micButton;

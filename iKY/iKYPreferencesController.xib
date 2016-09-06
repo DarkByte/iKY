@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="iKYPreferencesController">
             <connections>
+                <outlet property="appVersionLabel" destination="FEX-uT-RJW" id="3Hz-14-m7w"/>
                 <outlet property="autoStartCheckbox" destination="YKr-UX-XpL" id="JGr-Sk-RH3"/>
                 <outlet property="masShortcutView" destination="Kvu-af-YsY" id="3Yk-6v-Mcz"/>
+                <outlet property="playSoundCheckbox" destination="P7v-KM-Rjy" id="R3U-YG-RJd"/>
+                <outlet property="showNotificationsCheckbox" destination="SoN-hl-FW8" id="qL4-b3-1nr"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="iKY Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="240" height="224"/>
+            <rect key="contentRect" x="196" y="240" width="240" height="231"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1257"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="240" height="224"/>
+                <rect key="frame" x="0.0" y="0.0" width="240" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g62-ud-anc">
+                        <rect key="frame" x="20" y="197" width="200" height="14"/>
+                        <buttonCell key="cell" type="bevel" title="Choose your keyboard shortcut:" bezelStyle="regularSquare" imagePosition="left" alignment="left" scrollable="YES" lineBreakMode="clipping" state="on" focusRingType="none" inset="2" id="9gm-GV-CiV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-af-YsY" customClass="MASShortcutView">
+                        <rect key="frame" x="20" y="169" width="196" height="20"/>
+                    </customView>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKr-UX-XpL">
-                        <rect key="frame" x="18" y="188" width="200" height="18"/>
-                        <buttonCell key="cell" type="check" title="Start iKY at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gbi-bs-mOL">
+                        <rect key="frame" x="18" y="87" width="200" height="18"/>
+                        <buttonCell key="cell" type="check" title="Launch on system startup" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gbi-bs-mOL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -33,34 +46,58 @@
                             <action selector="autoStartAction:" target="-2" id="0RB-Im-xA2"/>
                         </connections>
                     </button>
-                    <button focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g62-ud-anc">
-                        <rect key="frame" x="20" y="150" width="200" height="14"/>
-                        <buttonCell key="cell" type="bevel" title="Choose your keyboard shortcut:" bezelStyle="regularSquare" imagePosition="left" alignment="left" scrollable="YES" lineBreakMode="clipping" state="on" focusRingType="none" inset="2" id="9gm-GV-CiV">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-af-YsY" customClass="MASShortcutView">
-                        <rect key="frame" x="20" y="122" width="196" height="20"/>
-                    </customView>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-9K-KUb">
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-9K-KUb" userLabel="Application Logo">
                         <rect key="frame" x="20" y="20" width="48" height="48"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="pn4-yp-5cN"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-Ut-6yi">
-                        <rect key="frame" x="74" y="36" width="144" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DarkByte / poptal.info" id="jJD-K5-88y">
+                        <rect key="frame" x="74" y="27" width="144" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="DarkByte / poptal.info" id="jJD-K5-88y">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7v-KM-Rjy">
+                        <rect key="frame" x="18" y="138" width="95" height="18"/>
+                        <buttonCell key="cell" type="check" title="Play sounds" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Vet-nw-A20">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="playSoundAction:" target="-2" id="cjg-Iu-qxj"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SoN-hl-FW8">
+                        <rect key="frame" x="18" y="118" width="185" height="18"/>
+                        <buttonCell key="cell" type="check" title="Display system notification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mJ3-T2-W9f">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showNotificationAction:" target="-2" id="Zrg-Tp-No2"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEX-uT-RJW">
+                        <rect key="frame" x="74" y="43" width="148" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="app version" id="bp5-TU-o0w">
+                            <font key="font" metaFont="systemSemibold" size="13"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="i1g-Et-fKk">
+                        <rect key="frame" x="20" y="108" width="196" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="553" y="345"/>
+            <point key="canvasLocation" x="657" y="107.5"/>
         </window>
     </objects>
     <resources>

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  iKY
+
+  Created by Victor Pop on 06/09/16.
+  Copyright © 2016 Victor Pop. All rights reserved.
+*/
+
+"ditto" = "Another copy of %@ is already running.";
+"auto_quit" = "This copy will quit automatically in a few seconds.";

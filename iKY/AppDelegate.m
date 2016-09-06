@@ -38,18 +38,17 @@
     [iKYUtils suicideIfDuplicate];
 
     [self initAppIcon];
-    [self showMicEnabled:![NSSound isInputMuted]];
     
-    [self iKYsetup];
-}
-
-- (void)iKYsetup {
     [iKYUtils bringWindowOnTop:[NSApplication sharedApplication].mainWindow];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-
+    
     self->defaults = [NSUserDefaults standardUserDefaults];
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
+}
+
+- (void)iKYRestore {
+    [self showMicEnabled:![NSSound isInputMuted]];
 }
 
 #pragma mark - Menu bar icon
@@ -66,7 +65,7 @@
     [self->barMenu addItem:NSMenuItem.separatorItem];
     [self->barMenu addItemWithTitle:@"Preferences" action:@selector(openPreferencesPanel:) keyEquivalent:@","];
     [self->barMenu addItem:NSMenuItem.separatorItem];
-    [self->barMenu addItemWithTitle:@"Quit" action:@selector(openPreferencesPanel:) keyEquivalent:@""];
+    [self->barMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
 
     self->statusItem.menu = self->barMenu;
 }
@@ -110,23 +109,22 @@
 }
 
 - (void)notifyUser:(BOOL)micEnabled {
-    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
-    
-    NSUserNotification *mikeNotification = [[NSUserNotification alloc] init];
-    
-    mikeNotification.title = [NSString stringWithFormat:@"Microphone: %@", micEnabled ? @"ENABLED" : @"disabled"];
-    mikeNotification.informativeText = [NSString stringWithFormat:@"Toggle with %@", self->lastShortcutString];
-    
-    mikeNotification.soundName = micEnabled ? MIKE_ON : MIKE_OFF;
-    mikeNotification.contentImage = [NSImage imageNamed:micEnabled ? MIKE_ON : MIKE_OFF];
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:mikeNotification];
+    [iKYUtils playSound:micEnabled];
+    [iKYUtils showNotification:micEnabled];
 }
 
 #pragma mark - Application delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self iKYinit];
+}
+
+- (void)applicationWillUnhide:(NSNotification *)notification {
+    [self iKYRestore];
+}
+
+- (void)applicationWillBecomeActive:(NSNotification *)notification {
+    [self iKYRestore];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
@@ -140,7 +138,7 @@
 #pragma mark - System-wide keyboard shortcut binder
 
 - (void)registerHotKey:(MASShortcut *)customKey {
-    self->lastShortcutString = customKey.description;
+    [iKYUtils sharedUtils].shortcutString = customKey.description;
 
     hotKeyCenter = [DDHotKeyCenter sharedHotKeyCenter];
     
