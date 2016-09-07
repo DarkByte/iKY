@@ -1,4 +1,6 @@
-# iKY - Silence! I kill you! Microphone control made easy!
+# iKY
+
+Silence! I kill you! Microphone control made easy!
 
 Ever been in an endless Hangouts/WebEx/you-name-it meeting? Ever cheated on it by resuming to code only to be brought back to reality by someone mentioning your name and asking you a question? Frantically looking for the un-mute button on the conference application view is not my idea of fun. iKY was born as a solution to this problem.
 
