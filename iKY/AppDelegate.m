@@ -38,6 +38,7 @@
     [iKYUtils suicideIfDuplicate];
 
     [self initAppIcon];
+    [self iKYRestore];
     
     [iKYUtils bringWindowOnTop:[NSApplication sharedApplication].mainWindow];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
