@@ -35,17 +35,20 @@
 @implementation AppDelegate
 
 - (void)iKYinit {
+    [self loadDefaults];
     [iKYUtils suicideIfDuplicate];
 
     [self initAppIcon];
     [self iKYRestore];
     
-    [iKYUtils bringWindowOnTop:[NSApplication sharedApplication].mainWindow];
+    [self showMainWindow];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     
     self->defaults = [NSUserDefaults standardUserDefaults];
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
+
+    [self openPreferencesFirstTime];
 }
 
 - (void)iKYRestore {
@@ -68,7 +71,9 @@
     [self->barMenu addItem:NSMenuItem.separatorItem];
     [self->barMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
 
+    [self->statusItem setDoubleAction:@selector(toggleMicAction:)]; // WORK IN PROGRESS
     self->statusItem.menu = self->barMenu;
+    
 }
 
 - (void)updateAppIconImage:(NSString *)mikeImageName {
@@ -92,6 +97,29 @@
 
     [self showMicEnabled:isMute];
     [self notifyUser:isMute];
+}
+
+#pragma mark - Preferences
+
+- (void)loadDefaults {
+    NSDictionary *defaultPrefs = @{kFirstTime : @1,
+                                   kShowMain : @1,
+                                   kShowNotifications : @1,
+                                   kPlaySound : @1};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+}
+
+- (void)openPreferencesFirstTime {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kFirstTime]) {
+        [self openPreferencesPanel:self];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFirstTime];
+    }
+}
+
+- (void)showMainWindow {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kShowMain]) {
+        [_mainWindow makeKeyAndOrderFront:self];
+    }
 }
 
 - (IBAction)openPreferencesPanel:(id)sender {

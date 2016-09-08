@@ -11,6 +11,12 @@ static NSString *const kGlobalShortcut = @"iKY_globalShortcut";
 static NSString *const MIKE_ON = @"mike_on";
 static NSString *const MIKE_OFF = @"mike_off";
 
+#pragma mark - NSUserDefaults constants
+
+static NSString *const kFirstTime = @"firstTime";
+
+static NSString *const kShowMain = @"showMain";
+static NSString *const kAutoStart = @"autoStart";
+
 static NSString *const kPlaySound = @"playSound";
 static NSString *const kShowNotifications = @"showNotifications";
-static NSString *const kAutoStart = @"autoStart";

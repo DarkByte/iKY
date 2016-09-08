@@ -11,14 +11,16 @@
 
 @interface iKYPreferencesController : NSWindowController <NSWindowDelegate>
 
+@property (weak) IBOutlet NSButton *displayMainWindow;
+@property (weak) IBOutlet NSButton *autoStartCheckbox;
+
 @property (weak) IBOutlet NSButton *playSoundCheckbox;
 @property (weak) IBOutlet NSButton *showNotificationsCheckbox;
 
-@property (weak) IBOutlet NSButton *autoStartCheckbox;
+- (IBAction)displayMainWindowAction:(id)sender;
+- (IBAction)autoStartAction:(id)sender;
 
 - (IBAction)playSoundAction:(id)sender;
 - (IBAction)showNotificationAction:(id)sender;
-
-- (IBAction)autoStartAction:(id)sender;
 
 @end

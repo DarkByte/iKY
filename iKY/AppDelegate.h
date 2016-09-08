@@ -12,6 +12,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
+@property (weak) IBOutlet NSWindow *mainWindow;
 @property (weak) IBOutlet NSButton *micButton;
 
 - (IBAction)toggleMicAction:(id)sender;

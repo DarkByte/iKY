@@ -36,9 +36,11 @@
 
     self->defaults = [NSUserDefaults standardUserDefaults];
 
+    self.displayMainWindow.state = [self->defaults integerForKey:kShowMain];
+    self.autoStartCheckbox.state = [self->defaults integerForKey:kAutoStart];
+    
     self.playSoundCheckbox.state = [self->defaults integerForKey:kPlaySound];
     self.showNotificationsCheckbox.state = [self->defaults integerForKey:kShowNotifications];
-    self.autoStartCheckbox.state = [self->defaults integerForKey:kAutoStart];
 
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     self->_masShortcutView.shortcutValue = globalShortcut;
@@ -49,12 +51,19 @@
     };
 }
 
+- (IBAction)displayMainWindowAction:(id)sender {
+    [self->defaults setInteger:self.displayMainWindow.state forKey:kShowMain];
+    [self->defaults synchronize];
+}
+
 - (IBAction)playSoundAction:(id)sender {
     [self->defaults setInteger:self.playSoundCheckbox.state forKey:kPlaySound];
+    [self->defaults synchronize];
 }
 
 - (IBAction)showNotificationAction:(id)sender {
     [self->defaults setInteger:self.showNotificationsCheckbox.state forKey:kShowNotifications];
+    [self->defaults synchronize];
 }
 
 - (IBAction)autoStartAction:(id)sender
