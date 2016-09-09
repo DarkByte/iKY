@@ -1,1 +1,1 @@
-Double click on the taskbar icon to toggle mike on / off
+Push-to-talk (system-wide shortcut)
