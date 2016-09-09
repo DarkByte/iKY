@@ -20,3 +20,5 @@ static NSString *const kAutoStart = @"autoStart";
 
 static NSString *const kPlaySound = @"playSound";
 static NSString *const kShowNotifications = @"showNotifications";
+
+static NSInteger kActivateCustomClick = 0xDB;

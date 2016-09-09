@@ -24,7 +24,7 @@
 
     iKYPreferencesController *preferencesPanel;
 
-    NSStatusItem *statusItem;
+    NSStatusItem *menuIcon;
     NSMenu *barMenu;
 }
 
@@ -40,14 +40,15 @@
 
     [self initAppIcon];
     [self iKYRestore];
-    
-    [self showMainWindow];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleMicAction:) name:@"double_click_event" object:nil];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    
+
     self->defaults = [NSUserDefaults standardUserDefaults];
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
 
+    [self showMainWindow];
     [self openPreferencesFirstTime];
 }
 
@@ -58,27 +59,25 @@
 #pragma mark - Menu bar icon
 
 - (void)initAppIcon {
-    self->statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    self->menuIcon = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     [self initTopMenu];
 }
 
 - (void)initTopMenu {
     self->barMenu = [NSMenu new];
-
     [self->barMenu addItemWithTitle:@"Toggle microphone" action:@selector(toggleMicAction:) keyEquivalent:@""];
     [self->barMenu addItem:NSMenuItem.separatorItem];
     [self->barMenu addItemWithTitle:@"Preferences" action:@selector(openPreferencesPanel:) keyEquivalent:@","];
     [self->barMenu addItem:NSMenuItem.separatorItem];
     [self->barMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
 
-    [self->statusItem setDoubleAction:@selector(toggleMicAction:)]; // WORK IN PROGRESS
-    self->statusItem.menu = self->barMenu;
-    
+    self->menuIcon.menu = self->barMenu;
+    self->menuIcon.button.tag = kActivateCustomClick;
 }
 
 - (void)updateAppIconImage:(NSString *)mikeImageName {
     NSString *imageName = [NSString stringWithFormat:@"menu_%@", mikeImageName];
-    self->statusItem.image =[NSImage imageNamed:imageName];
+    self->menuIcon.image = [NSImage imageNamed:imageName];
 }
 
 #pragma mark - Microphone related stuff

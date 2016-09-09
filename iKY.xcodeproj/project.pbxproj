@@ -12,6 +12,7 @@
 		076060C11C9DB77C00FBC934 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B01C9DB77C00FBC934 /* DDHotKeyCenter.m */; };
 		076060C51C9DB77C00FBC934 /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */; };
 		0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0763B2201C9DC8D90033628E /* iKY.xcassets */; };
+		077C311B1D83397A00A4AF2F /* NSButton+CustomClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C311A1D83397A00A4AF2F /* NSButton+CustomClick.m */; };
 		079D5FE21D7F50AF00E6CD7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 079D5FE11D7F50AF00E6CD7F /* Localizable.strings */; };
 		079ECAC91C9EF2E300EBAABA /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAC71C9EF2E300EBAABA /* ISSoundAdditions.m */; };
 		079ECAD41C9EF5A000EBAABA /* NSApplication+MXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 079ECAD31C9EF5A000EBAABA /* NSApplication+MXUtilities.m */; };
@@ -37,6 +38,8 @@
 		076060B31C9DB77C00FBC934 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
 		076060B41C9DB77C00FBC934 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
 		0763B2201C9DC8D90033628E /* iKY.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iKY.xcassets; path = Images/iKY.xcassets; sourceTree = "<group>"; };
+		077C31191D83397A00A4AF2F /* NSButton+CustomClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+CustomClick.h"; sourceTree = "<group>"; };
+		077C311A1D83397A00A4AF2F /* NSButton+CustomClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+CustomClick.m"; sourceTree = "<group>"; };
 		079D5FE11D7F50AF00E6CD7F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		079D5FE31D7F56EA00E6CD7F /* iKYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iKYConstants.h; sourceTree = "<group>"; };
 		079ECAC61C9EF2E300EBAABA /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSoundAdditions.h; path = iKY/3rdParty/ISSoundAdditions/ISSoundAdditions.h; sourceTree = SOURCE_ROOT; };
@@ -109,6 +112,15 @@
 			path = DDHotKey;
 			sourceTree = "<group>";
 		};
+		077C30ED1D8302CB00A4AF2F /* Custom button */ = {
+			isa = PBXGroup;
+			children = (
+				077C31191D83397A00A4AF2F /* NSButton+CustomClick.h */,
+				077C311A1D83397A00A4AF2F /* NSButton+CustomClick.m */,
+			);
+			name = "Custom button";
+			sourceTree = "<group>";
+		};
 		079ECAD11C9EF5A000EBAABA /* NSApplication+MXUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,7 @@
 				07BE77161CA74472009D73AE /* Main window */,
 				07BE76D11CA56283009D73AE /* Preferences */,
 				07BE77141CA7292F009D73AE /* iKYUtils */,
+				077C30ED1D8302CB00A4AF2F /* Custom button */,
 				07BE77151CA72945009D73AE /* Resources */,
 				07BA02741AB8331C00ADC1FB /* Supporting Files */,
 			);
@@ -302,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077C311B1D83397A00A4AF2F /* NSButton+CustomClick.m in Sources */,
 				07C7FCEE1C9DBAC400236E22 /* main.m in Sources */,
 				07BA02781AB8331C00ADC1FB /* AppDelegate.m in Sources */,
 				07F59B301CA42789007FA9B0 /* iKYPreferencesController.m in Sources */,
