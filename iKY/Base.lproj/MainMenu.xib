@@ -89,6 +89,12 @@
                             <action selector="toggleMicAction:" target="Voe-Tx-rLC" id="210-Wd-H4r"/>
                         </connections>
                     </button>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-Q7-pcb">
+                        <rect key="frame" x="0.0" y="151" width="154" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hYe-xu-8AG" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="2" id="9WD-Ik-Dvi"/>
@@ -97,7 +103,7 @@
                     <constraint firstAttribute="bottom" secondItem="hYe-xu-8AG" secondAttribute="bottom" constant="2" id="q4T-TX-7cz"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="524" y="363"/>
+            <point key="canvasLocation" x="636" y="368"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="jbJ-9l-rDZ"/>
     </objects>
