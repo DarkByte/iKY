@@ -1,1 +1,2 @@
-Push-to-talk (system-wide shortcut)
+Features:
+	Push-to-talk (system-wide shortcut)

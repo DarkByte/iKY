@@ -43,8 +43,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleMicAction:) name:@"double_click_event" object:nil];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-
-    self->defaults = [NSUserDefaults standardUserDefaults];
+    
     MASShortcut *globalShortcut = [MASShortcut shortcutWithData:[self->defaults objectForKey:kGlobalShortcut]];
     [self registerHotKey:globalShortcut];
 
@@ -101,22 +100,27 @@
 #pragma mark - Preferences
 
 - (void)loadDefaults {
+    self->defaults = [NSUserDefaults standardUserDefaults];
+
+    // default hotkey: // Cmd + Ctrl + Z
+    MASShortcut *defaultHotKey = [MASShortcut shortcutWithKeyCode:6 modifierFlags:NSCommandKeyMask | NSControlKeyMask];
     NSDictionary *defaultPrefs = @{kFirstTime : @1,
+                                   kGlobalShortcut: defaultHotKey.data,
                                    kShowMain : @1,
                                    kShowNotifications : @1,
                                    kPlaySound : @1};
-    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    [self->defaults registerDefaults:defaultPrefs];
 }
 
 - (void)openPreferencesFirstTime {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kFirstTime]) {
+    if ([self->defaults boolForKey:kFirstTime]) {
         [self openPreferencesPanel:self];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFirstTime];
+        [self->defaults setBool:NO forKey:kFirstTime];
     }
 }
 
 - (void)showMainWindow {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kShowMain]) {
+    if ([self->defaults boolForKey:kShowMain]) {
         [_mainWindow makeKeyAndOrderFront:self];
     }
 }
