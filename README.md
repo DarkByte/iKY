@@ -1,7 +1,6 @@
-iKY
-===
-Microphone control made easy!
------------------------------
+# iKY
+
+**Microphone control made easy!**
 
 > **Silence! I kill you!** (_Jeff Dunham, Achmed the dead terrorist_)
 
