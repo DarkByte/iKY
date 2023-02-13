@@ -26,6 +26,7 @@
 }
 
 - (void)displaySuicideAlert {
+    
     NSAlert *suicideAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"already_running", nil), _appName]
                                             defaultButton:nil alternateButton:nil otherButton:nil
                                 informativeTextWithFormat:NSLocalizedString(@"auto_quit", nil)];
@@ -39,8 +40,7 @@
 
 #pragma mark - Notifications
 
-+ (void)playSound:(BOOL)micEnabled
-{
++ (void)playSound:(BOOL)micEnabled {
     BOOL allowSound = [[NSUserDefaults standardUserDefaults] boolForKey:kPlaySound];
     if (!allowSound) {
         return;
@@ -51,8 +51,7 @@
     [sound play];
 }
 
-+ (void)showNotification:(BOOL)micEnabled
-{
++ (void)showNotification:(BOOL)micEnabled {
     BOOL allowNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kShowNotifications];
     if (!allowNotification) {
         return;
@@ -82,15 +81,13 @@
     return sharedUtils;
 }
 
-+ (void)suicideIfDuplicate
-{
++ (void)suicideIfDuplicate {
     if ([[NSRunningApplication runningApplicationsWithBundleIdentifier:[[NSBundle mainBundle] bundleIdentifier]] count] > 1) {
         [[iKYUtils sharedUtils] displaySuicideAlert];
     }
 }
 
-+ (void)setLaunchOnLogin:(BOOL)launchOnLogin
-{
++ (void)setLaunchOnLogin:(BOOL)launchOnLogin {
     NSURL *bundleURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     LSSharedFileListRef loginItemsListRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     
@@ -120,8 +117,7 @@
     }
 }
 
-+ (void)bringWindowOnTop:(NSWindow *)window
-{
++ (void)bringWindowOnTop:(NSWindow *)window {
     [window setLevel:CGWindowLevelForKey(kCGMaximumWindowLevelKey)];
 }
 

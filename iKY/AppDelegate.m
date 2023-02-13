@@ -76,7 +76,7 @@
 
 - (void)updateAppIconImage:(NSString *)mikeImageName {
     NSString *imageName = [NSString stringWithFormat:@"menu_%@", mikeImageName];
-    self->menuIcon.image = [NSImage imageNamed:imageName];
+    self->menuIcon.button.image = [NSImage imageNamed:imageName];
 }
 
 #pragma mark - Microphone related stuff
@@ -103,7 +103,7 @@
     self->defaults = [NSUserDefaults standardUserDefaults];
 
     // default hotkey: // Cmd + Ctrl + Z
-    MASShortcut *defaultHotKey = [MASShortcut shortcutWithKeyCode:6 modifierFlags:NSCommandKeyMask | NSControlKeyMask];
+    MASShortcut *defaultHotKey = [MASShortcut shortcutWithKeyCode:6 modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagControl];
     NSDictionary *defaultPrefs = @{kFirstTime : @1,
                                    kGlobalShortcut: defaultHotKey.data,
                                    kShowMain : @1,

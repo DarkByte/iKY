@@ -17,21 +17,7 @@
             return;
         }
 
-        switch (event.clickCount) {
-            case 1: {
-                [self performSelector:@selector(callMouseDownSuper:) withObject:event afterDelay:[NSEvent doubleClickInterval]];
-                break;
-            }
-            case 2: {
-                [NSRunLoop cancelPreviousPerformRequestsWithTarget:self];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"double_click_event" object:nil];
-                break;
-            }
-        }
-    }
-
-    - (void)callMouseDownSuper:(NSEvent *)event {
-        [super mouseDown:event];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"double_click_event" object:nil];
     }
 
     @end

@@ -65,7 +65,7 @@
 }
 
 - (IBAction)autoStartAction:(id)sender {
-    [iKYUtils setLaunchOnLogin:self.autoStartCheckbox.state == NSOnState];
+    [iKYUtils setLaunchOnLogin:self.autoStartCheckbox.state == NSControlStateValueOn];
     [self->defaults setInteger:self.autoStartCheckbox.state forKey:kAutoStart];
 
     [self->defaults synchronize];
