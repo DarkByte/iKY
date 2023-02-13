@@ -6,5 +6,5 @@
   Copyright © 2016 Victor Pop. All rights reserved.
 */
 
-"ditto" = "Another copy of %@ is already running.";
+"already_running" = "Another copy of %@ is already running.";
 "auto_quit" = "This copy will quit automatically in a few seconds.";

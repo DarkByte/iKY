@@ -29,9 +29,7 @@
     [self loadPreferences];
 }
 
-- (void)loadPreferences
-{
-
+- (void)loadPreferences {
     self.appVersionLabel.stringValue = [NSString stringWithFormat:@"%@ v%@", [iKYUtils sharedUtils].appName, [iKYUtils sharedUtils].appBuild];
 
     self->defaults = [NSUserDefaults standardUserDefaults];
@@ -66,8 +64,7 @@
     [self->defaults synchronize];
 }
 
-- (IBAction)autoStartAction:(id)sender
-{
+- (IBAction)autoStartAction:(id)sender {
     [iKYUtils setLaunchOnLogin:self.autoStartCheckbox.state == NSOnState];
     [self->defaults setInteger:self.autoStartCheckbox.state forKey:kAutoStart];
 

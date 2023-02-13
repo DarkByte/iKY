@@ -14,8 +14,7 @@
 
 @implementation iKYUtils
 
-- (iKYUtils *)init
-{
+- (iKYUtils *)init {
     if (self = [super init]) {
         _appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleNameKey];
         
@@ -26,9 +25,8 @@
     return self;
 }
 
-- (void)displaySuicideAlert
-{
-    NSAlert *suicideAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"ditto", nil), _appName]
+- (void)displaySuicideAlert {
+    NSAlert *suicideAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"already_running", nil), _appName]
                                             defaultButton:nil alternateButton:nil otherButton:nil
                                 informativeTextWithFormat:NSLocalizedString(@"auto_quit", nil)];
     
