@@ -268,7 +268,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1420;
-				ORGANIZATIONNAME = "Victor Pop";
+				ORGANIZATIONNAME = DarkByte;
 				TargetAttributes = {
 					07BA02701AB8331C00ADC1FB = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -299,11 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F59B311CA42789007FA9B0 /* iKYPreferencesController.xib in Resources */,
-				079D5FE21D7F50AF00E6CD7F /* Localizable.strings in Resources */,
 				07C7FCEB1C9DBAAB00236E22 /* MainMenu.xib in Resources */,
 				07E044D71CA14DD60043ECA2 /* mike_off.aiff in Resources */,
-				0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */,
 				07E044D81CA14DD60043ECA2 /* mike_on.aiff in Resources */,
+				0763B2211C9DC8D90033628E /* iKY.xcassets in Resources */,
+				079D5FE21D7F50AF00E6CD7F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
